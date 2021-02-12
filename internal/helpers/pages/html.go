@@ -18,3 +18,4 @@ const IndexPage = `
 		</ul>
 	</body>
 </html>
+`

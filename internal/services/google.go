@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/BNPrashanth/poc-go-oauth2/internal/logger"
+	"github.com/hanifbg/go-oauth/internal/logger"
 
 	"github.com/spf13/viper"
 	"golang.org/x/oauth2"
@@ -16,9 +16,12 @@ var (
 	oauthConfGl = &oauth2.Config{
 		ClientID:     "",
 		ClientSecret: "",
-		RedirectURL:  "http://localhost:9090/callback-gl",
-		Scopes:       []string{"https://www.googleapis.com/auth/userinfo.email"},
-		Endpoint:     google.Endpoint,
+		RedirectURL:  "http://localhost:3000/callback-gl",
+		Scopes: []string{
+			"https://www.googleapis.com/auth/userinfo.email",
+			"https://www.googleapis.com/auth/userinfo.profile",
+		},
+		Endpoint: google.Endpoint,
 	}
 	oauthStateStringGl = ""
 )
